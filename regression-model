@@ -46,3 +46,53 @@ function performRegressionModel(timeSeries) {
   // Replace this with your actual regression model implementation
   // For demonstration purposes, we'll just return the sum of the time series data
   return timeSeries.reduce((sum, value) => sum + value, 0);
+
+
+/**
+ * Runs a regression model on multiple time series data.
+ * 
+ * @param {Array<Array<number>>} data - An array of time series data. Each inner array represents a single time series.
+ * @returns {Array<number>} - An array of regression model outputs for each time series.
+ */
+function runRegressionModel(data) {
+  try {
+    // Check if data is provided and is an array
+    if (!data || !Array.isArray(data)) {
+      throw new Error("Invalid data format. Please provide an array of time series data.");
+    }
+
+    // Check if each time series is an array
+    for (let i = 0; i < data.length; i++) {
+      if (!Array.isArray(data[i])) {
+        throw new Error(`Invalid data format at index ${i}. Each time series should be represented as an array.`);
+      }
+    }
+
+    // Perform regression model on each time series
+    const results = [];
+    for (let i = 0; i < data.length; i++) {
+      const timeSeries = data[i];
+      // Perform regression model calculation for each time series and store the result
+      const regressionResult = performRegressionModel(timeSeries);
+      results.push(regressionResult);
+    }
+
+    return results;
+  } catch (error) {
+    // Log the error
+    console.error(error);
+    return [];
+  }
+}
+
+/**
+ * Performs the regression model calculation for a single time series.
+ * 
+ * @param {Array<number>} timeSeries - The time series data.
+ * @returns {number} - The regression model output for the time series.
+ */
+function performRegressionModel(timeSeries) {
+  // Perform the regression model calculation for the given time series
+  // Replace this with your actual regression model implementation
+  // For demonstration purposes, we'll just return the sum of the time series data
+  return timeSeries.reduce((sum, value) => sum + value, 0);
