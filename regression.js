@@ -34,3 +34,8 @@ function trainRegressionModel(data) {
 const trainingData = [[1, 2], [2, 4], [3, 6], [4, 8], [5, 10]];
 const model = trainRegressionModel(trainingData);
 console.log(model);
+
+// Example usage
+const trainingData = [[1, 2], [2, 4], [3, 6], [4, 8], [5, 10]];
+const model = trainRegressionModel(trainingData);
+console.log(model);
